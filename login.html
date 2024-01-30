@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione e Login</title>
+    <script src="users.js"></script>
+    <script src="contacts.js"></script>
+</head>
+<body>
+
+    <h2>Registrazione</h2>
+    <form id="registrationForm">
+        <label for="regUsername">Nome:</label>
+        <input type="text" id="regUsername" name="username" required>
+
+        <label for="regEmail">Email di accesso:</label>
+        <input type="email" id="regEmail" name="email" required>
+
+        <label for="regPassword">Password:</label>
+        <input type="password" id="regPassword" name="password" required>
+
+        <button type="button" onclick="register()">Registrati</button>
+    </form>
+
+    <h2>Login</h2>
+    <form id="loginForm">
+        <label for="loginEmail">Email:</label>
+        <input type="email" id="loginEmail" name="email" required>
+
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="password" required>
+
+        <button type="button" onclick="login()">Login</button>
+    </form>
+
+    <h2>Informazioni Utente Corrente</h2>
+    <div id="userInfo" style="display:none;">
+        <p><strong>Username:</strong> <span id="userUsername"></span></p>
+        <p><strong>Email:</strong> <span id="userEmail"></span></p>
+        <p><strong>ID Utente:</strong> <span id="userId"></span></p>
+
+        <!-- Pulsante per visualizzare l'elenco dei contatti -->
+        <button type="button" onclick="displayContacts()">Visualizza Elenco Contatti</button>
+    </div>
+
+    <h2>Elenco Contatti</h2>
+    <div id="contactsList" style="display:none;">
+        <table>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody id="contactsTableBody"></tbody>
+        </table>
+
+        <br><br>
+        
+        <button type="button" onclick="createContactForm()">Crea Nuovo Contatto</button>
+        <button type="button" onclick="displayContacts()">Ricarica Elenco Contatti</button>
+        <br><br>
+        <label for="searchEmail">Cerca Contatti per Email:</label>
+        <input type="text" id="searchEmail" name="searchEmail">
+        <button type="button" onclick="searchContactsByEmail()">Cerca</button>
+    </div>
+
+</body>
+</html>
